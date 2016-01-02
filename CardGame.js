@@ -27,5 +27,3 @@ function cc(card) {
 // Add/remove calls to test your function.
 // Note: Only the last will display
 //cc(2); cc(3); cc(7); cc('K'); cc('A');
-
-console.log(cc(2));
