@@ -32,16 +32,19 @@ var collectionCopy = JSON.parse(JSON.stringify(collection));
 
 // Only change code below this line
 function update(id, prop, value) {
-    if (value !== " ") {
-        id.prop = value;
+    if(prop === "tracks" && value !== ""){
+        collection[id][prop].push(value);
     }
-    if (prop === "tracks" && value !== "") {
-        id.tracks.push(value);
+    else if(value !== ""){
+        collection[id][prop] = value;
+    }else{
+        delete collection[id][prop];
     }
-
     return collection;
 }
-
 // Alter values below to test your code
-update(5439, "artist", "ABBA");
+//update(5439, "artist", "ABBA");
+//update(2548, "artist", "");
+update(1245, "tracks", "Addicted to Love");
+
 console.log(collection);
