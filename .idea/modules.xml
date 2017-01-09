@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/FFC.iml" filepath="$PROJECT_DIR$/.idea/FFC.iml" />
-=======
-      <module fileurl="file://$PROJECT_DIR$/.idea/FCCPractice.iml" filepath="$PROJECT_DIR$/.idea/FCCPractice.iml" />
->>>>>>> 5eec3c131c0d17be1d8107b011375e743840aa98
     </modules>
   </component>
 </project>
