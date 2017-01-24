@@ -10,12 +10,27 @@
 
 function dropElements(arr, func) {
     console.log("array: "+arr);
-    var arr2 = [];
-    var len = arr.length;
-    for (var i=0;i<len;++i) {
-
+    for (var i =0;i<arr.length;++i) {
+        if (!func(arr[i])) {
+            //console.log("func("+i+"): "+func(arr[i]));
+            arr.splice(i,1);
+            --i;
+        } else if (func(arr[i])) {
+            return arr;
+        }
+        if (arr.length ==0) {
+            return [];
+        }
     }
+    console.log(arr);
     return arr;
 }
 
-dropElements([1, 2, 3], function(n) {return n < 3; });
+//dropElements([1, 2, 3], function(n) {return n < 3; }); //should return [1,2,3]
+
+//dropElements([1, 2, 3, 4], function(n) {return n >= 3;}) //should return [3, 4].
+dropElements([0, 1, 0, 1], function(n) {return n === 1;}) //should return [1, 0, 1].
+//dropElements([1, 2, 3], function(n) {return n > 0;}) //should return [1, 2, 3].
+//dropElements([1, 2, 3, 4], function(n) {return n > 5;}) //should return [].
+//dropElements([1, 2, 3, 7, 4], function(n) {return n > 3;}) //should return [7, 4].
+//dropElements([1, 2, 3, 9, 2], function(n) {return n > 2;}) //should return [3, 9, 2].
