@@ -12,9 +12,25 @@ function whatIsInAName(collection, source) {
     // What's in a name?
     var arr = [];
     // Only change code below this line
-
+    var len = collection.length;
+    var sourceK = Object.keys(source);
+    var sourceKey = sourceK[0];
+    console.log(sourceKey);
+    for (var i =0;i<len;++i) { // loop through collection to see if any keys match the sourcekey
+        var collectionKey = Object.keys(collection[i]);
+        console.log(collectionKey);
+        for (var j =0;j<collectionKey.length;++j) {
+            if (collectionKey[j] == sourceKey) {
+                console.log(collectionKey[j]);
+                if (collection[j].sourceKey) {
+                    arr.push(collection[j]);
+                }
+            }
+        }
+    }
 
     // Only change code above this line
+    console.log(arr);
     return arr;
 }
 
