@@ -9,7 +9,12 @@
 // Return the rest of the array, otherwise return an empty array.
 
 function dropElements(arr, func) {
-    // Drop them elements.
+    console.log("array: "+arr);
+    var arr2 = [];
+    var len = arr.length;
+    for (var i=0;i<len;++i) {
+
+    }
     return arr;
 }
 
