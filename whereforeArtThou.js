@@ -13,24 +13,35 @@ function whatIsInAName(collection, source) {
     var arr = [];
     // Only change code below this line
     var len = collection.length;
-    var sourceK = Object.keys(source);
-    var sourceKey = sourceK[0];
-    console.log(sourceKey);
-    for (var i =0;i<len;++i) { // loop through collection to see if any keys match the sourcekey
-        var collectionKey = Object.keys(collection[i]);
-        console.log(collectionKey);
-        for (var j =0;j<collectionKey.length;++j) {
-            if (collectionKey[j] == sourceKey) {
-                console.log(collectionKey[j]);
-                if (collection[j].sourceKey) {
-                    arr.push(collection[j]);
+    var arrObjs = [];
+    var sourceKeys = Object.keys(source);
+    var sourceLen = sourceKeys.length;
+    for (var i =0;i<len;++i) { // loop through each obj in collection
+        var tempObj = collection[i];
+        console.log("current obj: "+tempObj);
+        var collKeys = Object.keys(tempObj);
+        var collLen = collKeys.length;
+        var count =0;
+        for (var j =0;j<sourceLen;++j) { // loop through keys in source
+            var tempSource = sourceKeys[j];
+            console.log("current source: "+tempSource);
+            for (var k=0;k<collLen;++k) { // loop through keys in obj in collection
+                var insideObj = collKeys[k];
+                console.log(insideObj);
+                if (tempSource==insideObj) {
+                    ++count;
+                    if (count == collLen) {
+                        arrObjs.push(tempObj);
+                    }
+                    break;
                 }
             }
         }
     }
 
+    console.log(arrObjs);
     // Only change code above this line
-    console.log(arr);
+    //console.log(arr);
     return arr;
 }
 
