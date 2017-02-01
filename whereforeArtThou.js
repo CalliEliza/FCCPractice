@@ -7,6 +7,11 @@
 // Each property and value pair of the source object has to be present in the object from the collection
 // if it is to be included in the returned array.
 
+//SOLUTION SHOULD:
+// 1. generate an array of keys contained in the obj source
+// 2. iterate over each object in the array collection
+// 3. iterate over each key in the array keys
+// 4. check if each key in the array exists in the current object
 
 function whatIsInAName(collection, source) {
     // What's in a name?
@@ -14,30 +19,9 @@ function whatIsInAName(collection, source) {
     // Only change code below this line
     var len = collection.length;
     var arrObjs = [];
-    var sourceKeys = Object.keys(source);
+    var keys = Object.keys(source); //generates array of keys contained in 'source'
     var sourceLen = sourceKeys.length;
-    for (var i =0;i<len;++i) { // loop through each obj in collection
-        var tempObj = collection[i];
-        console.log("current obj: "+tempObj);
-        var collKeys = Object.keys(tempObj);
-        var collLen = collKeys.length;
-        var count =0;
-        for (var j =0;j<sourceLen;++j) { // loop through keys in source
-            var tempSource = sourceKeys[j];
-            console.log("current source: "+tempSource);
-            for (var k=0;k<collLen;++k) { // loop through keys in obj in collection
-                var insideObj = collKeys[k];
-                console.log(insideObj);
-                if (tempSource==insideObj) {
-                    ++count;
-                    if (count == collLen) {
-                        arrObjs.push(tempObj);
-                    }
-                    break;
-                }
-            }
-        }
-    }
+
 
     console.log(arrObjs);
     // Only change code above this line
