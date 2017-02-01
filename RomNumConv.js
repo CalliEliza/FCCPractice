@@ -2,28 +2,8 @@
 //All roman numerals answers should be provided in upper-case.
 
 function convertToRoman(num) {
-    var romanNum = [];
-    var len = num.length;
-    var array1_9 = [1,2,3,4,5,6,7,8,9];
-    var array10_90 = [10,20,30,40,50,60,70,80,90];
-    var array100_900 = [100,200,300,400,500,600,700,800,900,1000];
-    var array1_9RomNum = ["I","II","III","IV","V","VI","VII","VIII", "IX"];
-    var array10_90RomNum = ["X","XX","XXX","XL","L","LX","LXX","LXXX","XC"];
-    var array100_900RomNum = ["C","CC","CCC","CD","D","DC","DCC","DCCC","CM","M"];
-
-    if (len==1) {
-        romanNum.push(array1_9RomNum[num-1]);
-        console.log(romanNum);
-    }
-    for (var i =0;i<len;++i) {
-        if (len == 2) {
-            var tempDigit = num.indexOf(i);
-            var tempRoman = array10_90RomNum[tempDigit-1];
-            romanNun.push(tempRoman);
-            console.log(romanNum);
-        }
-
-    }
+     var dec = [1000,500,100,50,10,5,1];
+     var roman = ["M","D","C","L","X","V","I"];
 
     return romanNum;
 }
