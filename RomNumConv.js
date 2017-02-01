@@ -2,13 +2,21 @@
 //All roman numerals answers should be provided in upper-case.
 
 function convertToRoman(num) {
-     var dec = [1000,500,100,50,10,5,1];
+     var number = [1000,500,100,50,10,5,1];
      var roman = ["M","D","C","L","X","V","I"];
+     var len = number.length;
+     var ans = '';
+     for (var i =0;i<len;++i) {
+         while (num%number[i] < num) {
+             ans += roman[i];
+             num -= number[i];
+         }
+     }
 
-    return romanNum;
+    return ans;
 }
 
-convertToRoman(36);
+console.log(convertToRoman(36));
 
 //convertToRoman(2) //should return "II".
 //convertToRoman(3) //should return "III".
