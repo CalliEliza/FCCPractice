@@ -16,30 +16,21 @@
 function whatIsInAName(collection, source) {
     var arr = [];
     // Only change code below this line
-    var len = collection.length;
+    // var len = collection.length;
     var arrObjs = [];
     var keys = Object.keys(source); //generates array of keys contained in 'source'
-    for (var i =0;i<len;++i) {
-        for (var j=0;j<keys.length;++j) {
-            if (collection[i].hasOwnProperty(keys[j])) {
-                // if have the same key, check for value of key
-                console.log(collection[i]);
-                
-            }
-        }
+    return collection.filter((item) => {
+        return keys.every((key) => {
+            return item[key] === source[key];
+   //return arr;
+            });
+        });
     }
 
-
-    //console.log(arrObjs);
-    // Only change code above this line
-    //console.log(arr);
-    return arr;
-}
-
-whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
+//whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
 
 
 //whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }) //should return [{ first: "Tybalt", last: "Capulet" }].
 //whatIsInAName([{ "a": 1 }, { "a": 1 }, { "a": 1, "b": 2 }], { "a": 1 }) //should return [{ "a": 1 }, { "a": 1 }, { "a": 1, "b": 2 }].
 //whatIsInAName([{ "a": 1, "b": 2 }, { "a": 1 }, { "a": 1, "b": 2, "c": 2 }], { "a": 1, "b": 2 }) //should return [{ "a": 1, "b": 2 }, { "a": 1, "b": 2, "c": 2 }].
-//whatIsInAName([{ "a": 1, "b": 2 }, { "a": 1 }, { "a": 1, "b": 2, "c": 2 }], { "a": 1, "c": 2 })// should return [{ "a": 1, "b": 2, "c": 2 }].
+whatIsInAName([{ "a": 1, "b": 2 }, { "a": 1 }, { "a": 1, "b": 2, "c": 2 }], { "a": 1, "c": 2 })// should return [{ "a": 1, "b": 2, "c": 2 }].
