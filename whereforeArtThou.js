@@ -14,16 +14,23 @@
 // 4. check if each key in the array exists in the current object
 
 function whatIsInAName(collection, source) {
-    // What's in a name?
     var arr = [];
     // Only change code below this line
     var len = collection.length;
     var arrObjs = [];
     var keys = Object.keys(source); //generates array of keys contained in 'source'
-    
+    for (var i =0;i<len;++i) {
+        for (var j=0;j<keys.length;++j) {
+            if (collection[i].hasOwnProperty(keys[j])) {
+                // if have the same key, check for value of key
+                console.log(collection[i]);
+                
+            }
+        }
+    }
 
 
-    console.log(arrObjs);
+    //console.log(arrObjs);
     // Only change code above this line
     //console.log(arr);
     return arr;
