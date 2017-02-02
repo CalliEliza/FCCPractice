@@ -20,7 +20,7 @@ function whatIsInAName(collection, source) {
     var len = collection.length;
     var arrObjs = [];
     var keys = Object.keys(source); //generates array of keys contained in 'source'
-    var sourceLen = sourceKeys.length;
+    
 
 
     console.log(arrObjs);
