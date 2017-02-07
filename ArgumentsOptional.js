@@ -14,14 +14,29 @@
 
 // If either argument isn't a valid number, return undefined.
 
+// Solution:
+// 1. turn arguments list into an array
+// 2. check that each value is a number, otherwise return undefined
 
 function addTogether() {
-    return false;
+    var args = [...arguments];
+    let sum =0;
+    args.forEach(a => {
+        let typeOfValue = typeof a;
+        if (typeOfValue == 'number') {
+            sum+=a;
+        } else {
+            console.log('not a number');
+            sum = undefined;
+        }
+    });
+    console.log("answer "+sum);
+    return sum;
 }
 
-addTogether(2,3);
+//addTogether(2,3);
 
-//addTogether(2)(3) //should return 5.
-//addTogether("http://bit.ly/IqT6zt") //should return undefined.
-//addTogether(2, "3") //should return undefined.
-//addTogether(2)([3]) //should return undefined.
+//addTogether(2)(3); //should return 5.
+addTogether("http://bit.ly/IqT6zt"); //should return undefined.
+//addTogether(2, "3"); //should return undefined.
+//addTogether(2)([3]); //should return undefined.
