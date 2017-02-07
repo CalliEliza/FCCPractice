@@ -22,10 +22,18 @@
 // Return true if the string is a valid US phone number; otherwise return false.
 
 
+function isTenDigits(str) {
+    const len = str.length;
+    return len === 10 || len === 11 || len === 12 || len === 13 || len === 14;
+}
+
+
 function telephoneCheck(str) {
     let isValidTelNum = false;
-    const teleNumRexeg = new RegExp('([\d\s\W])', 'g');
-    if (str.match(teleNumRexeg)) {
+   // console.log(str.length);
+    const teleNumRexeg = new RegExp('[\\d\\s\\W]', 'g');
+    console.log(teleNumRexeg.test(str));
+    if (teleNumRexeg.test(str) && isTenDigits(str)) {
         isValidTelNum = true;
     }
     console.log(isValidTelNum);
