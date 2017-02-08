@@ -24,16 +24,16 @@
 
 function isTenDigits(str) {
     const len = str.length;
-    return len === 10 || len === 11 || len === 12 || len === 13 || len === 14;
+    return len === 10 || len === 11 || len === 12 || len === 13 || len === 14 || len === 16;
 }
 
 
 function telephoneCheck(str) {
     let isValidTelNum = false;
    // console.log(str.length);
-    const teleNumRexeg = new RegExp('[\\d\\s\\W]', 'g');
+    const teleNumRexeg = /^(1\s?)?(\(\d{3}\)|\d{3})[\s\-]?\d{3}[\s\-]?\d{4}$/;
     console.log(teleNumRexeg.test(str));
-    if (teleNumRexeg.test(str) && isTenDigits(str)) {
+    if (teleNumRexeg.test(str)) {
         isValidTelNum = true;
     }
     console.log(isValidTelNum);
@@ -42,18 +42,18 @@ function telephoneCheck(str) {
 
 
 
-telephoneCheck("555-555-5555");
+//telephoneCheck("555-555-5555");
 
-//telephoneCheck("555-555-5555") //should return a boolean.
-//telephoneCheck("1 555-555-5555") //should return true.
-//telephoneCheck("1 (555) 555-5555") //should return true.
-//telephoneCheck("5555555555") //should return true.
+//telephoneCheck("555-555-5555"); //should return a boolean.
+telephoneCheck("1 555-555-5555"); //should return true.
+telephoneCheck("1 (555) 555-5555"); //should return true.
+//telephoneCheck("5555555555"); //should return true.
 //telephoneCheck("555-555-5555") //should return true.
 //telephoneCheck("(555)555-5555") //should return true.
 //telephoneCheck("1(555)555-5555") //should return true.
 //telephoneCheck("555-5555") //should return false.
 //telephoneCheck("5555555") //should return false.
-//telephoneCheck("1 555)555-5555") //should return false.
+//telephoneCheck("1 555)555-5555"); //should return false.
 //telephoneCheck("1 555 555 5555") //should return true.
 //telephoneCheck("1 456 789 4444") //should return true.
 //telephoneCheck("123**&!!asdf#") //should return false.
