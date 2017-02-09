@@ -10,9 +10,22 @@
 //Return the string "Insufficient Funds" if cash-in-drawer is less than the change due. Return the string "Closed" if cash-in-drawer is equal to the change due.
 
 //Otherwise, return change in coin and bills, sorted in highest to lowest order.
+    // OBJECT WITH VALUES FOR EACH TYPE OF MONEY
+let values = [
+    { name : 'ONE HUNDRED', val: 100.00 },
+    { name : 'TWENTY', val: 20.00 },
+    { name : 'TEN', val: 10.00 },
+    { name : 'FIVE', val: 5.00 },
+    { name : 'ONE', val: 1.00 },
+    { name : 'QUARTER', val: 0.25 },
+    { name : 'DIME', val: 0.10 },
+    { name : 'NICKEL', val: 0.05 },
+    { name : 'PENNY', val: 0.01 }
+];
+
 
 function checkCashRegister(price, cash, cid) {
-    let change = [];
+    let change;
     let changeOwed = cash - price;
     let totalInDraw = 0;
     cid.forEach(coin => { //gets total about in draw
@@ -23,6 +36,7 @@ function checkCashRegister(price, cash, cid) {
         curr[amt[0]] = amt[1];
         return curr;
     }, {total: 0});
+   // console.log(drawObj);
     // checks to see if amt in draw is less than or equal to the changed owed
     if (drawObj.total < changeOwed) {
         console.log("Insufficient Funds");
@@ -33,8 +47,26 @@ function checkCashRegister(price, cash, cid) {
         return "Closed";
     }
 
-    console.log(change);
-    return change;
+    let change1 = values.reduce((curr, amt) => {
+        let count =0;
+        //only run while there is still money in draw
+        while (drawObj[amt.name] > 0 && changeOwed >= amt.val) {
+            changeOwed -= amt.val;
+            drawObj[amt.name] -= amt.val;
+            count += amt.val;
+
+            changeOwed = Math.round(changeOwed * 100) / 100;
+        }
+        if (count > 0) {
+            curr.push([amt.name, count]);
+        }
+        return curr;
+    } ,[]);
+    if (change1.length < 1 || changeOwed > 0) {
+        return "Insufficient Funds";
+    }
+    console.log(change1);
+    return change1;
 }
 
 // Example cash-in-drawer array:
