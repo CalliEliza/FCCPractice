@@ -2,7 +2,8 @@
  * Created by chewy on 2/9/17.
  */
 
-//Design a cash register drawer function checkCashRegister() that accepts purchase price as the first argument (price), payment as the second argument (cash), and cash-in-drawer (cid) as the third argument.
+//Design a cash register drawer function checkCashRegister() that accepts purchase price as the first argument (price),
+// payment as the second argument (cash), and cash-in-drawer (cid) as the third argument.
 
 //cid is a 2D array listing available currency.
 
@@ -11,8 +12,21 @@
 //Otherwise, return change in coin and bills, sorted in highest to lowest order.
 
 function checkCashRegister(price, cash, cid) {
-    var change;
-    // Here is your change, ma'am.
+    let change;
+    let changeOwed = cash - price;
+    let totalInDraw = 0;
+    cid.forEach(coin => { //gets total about in draw
+        totalInDraw+= coin[1];
+    });
+    // checks to see if amt in draw is less than or equal to the changed owed
+    if (Number(Math.round(totalInDraw+'e2')+'e-2') < changeOwed) {
+        return "Insufficient Funds";
+    }
+    else if (Number(Math.round(totalInDraw+'e2')+'e-2') === changeOwed) {
+        return "Closed";
+    }
+    console.log(totalInDraw);
+    console.log(Number(Math.round(totalInDraw+'e2')+'e-2'));
     return change;
 }
 
