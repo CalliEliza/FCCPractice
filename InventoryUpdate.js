@@ -12,12 +12,34 @@
 // order by item.
 
 function updateInventory(arr1, arr2) {
-    let currInventory ={};
-    for (let i =0;i<arr1.length;++i) {
-        currInventory[arr1[i][1]] = arr1[i][0];
+    let count =0;
+    for (let i=0;i<arr2.length;++i) {
+        for (let j=0;j<arr1.length;++j) {
+            let temp = arr2[i][1];
+            let temp2 = arr1[j][1];
+            if (arr2[i][1] == arr1[j][1]) {
+                //console.log(arr2[i][1]);
+                arr1[j][0] += arr2[i][0];
+                //console.log(arr1[j][0]);
+            } else {
+                ++count;
+            }
+        }
+        if (count == arr1.length) {
+            arr1.push(arr2[i]);
+           // console.log(arr1);
+        }
+        count =0;
     }
-    console.log(currInventory);
-
+    arr1.sort((a,b) => {
+        if (a[1]>b[1]) {
+            return 1;
+        }
+        if (a[1]<b[1]) {
+            return -1;
+        }
+        return 0;
+    });
     return arr1;
 }
 
@@ -36,4 +58,7 @@ let newInv = [
     [7, "Toothpaste"]
 ];
 
-updateInventory(curInv, newInv);
+//updateInventory(curInv, newInv);
+
+updateInventory([], [[2, "Hair Pin"], [3, "Half-Eaten Apple"], [67, "Bowling Ball"], [7, "Toothpaste"]]);
+//should return [[67, "Bowling Ball"], [2, "Hair Pin"], [3, "Half-Eaten Apple"], [7, "Toothpaste"]]
