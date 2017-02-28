@@ -20,6 +20,7 @@ ACCENT: TEAL #00BFA5 (A700)
 /* body style*/
 body {
     background-color: var(--bk-color);
+    font-family: 'Proza Libre', sans-serif;
 }
 
 .title {
