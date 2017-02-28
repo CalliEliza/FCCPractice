@@ -9,3 +9,19 @@ MAIN: BLUE GREY #607d8b (500)
 ACCENT: TEAL #00BFA5 (A700)
 
 */
+/* main colors to use */
+:root {
+    --main-color: #607d8b;
+    --secondary-color: #455a64;
+    --accent-color: #00bfa5;
+    --bk-color: #90a4ae;
+    --white: #eaedc3;
+}
+/* body style*/
+body {
+    background-color: var(--bk-color);
+}
+
+.container {
+    border: 2px solid #809a6a;
+}
