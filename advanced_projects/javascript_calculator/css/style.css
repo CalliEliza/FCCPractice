@@ -96,9 +96,7 @@ body {
     height: 75px;
     width: 398px;
     cursor: pointer;
-    border-left: .015em solid #CFD8DC;
-    border-right: .015em solid #CFD8DC;
-    border-top: .015em solid #CFD8DC;
+    border: .015em solid #CFD8DC;
 }
 
 
