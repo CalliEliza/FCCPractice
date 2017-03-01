@@ -4,3 +4,6 @@
 
 const numbers = document.querySelectorAll('.key');
 const operations = document.querySelectorAll('.op');
+const screen = document.querySelector('#value');
+
+
