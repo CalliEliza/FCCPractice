@@ -33,7 +33,10 @@ function update() {
     screen.textContent = runningInput;
 }
 
-function getTotal(a,b,op) {
+function getTotal() {
+    runningInput = inputs.join();
+    let test = eval(runningInput);
+    screen.textContent = test;
 }
 
 //listens and gets the clicked on number
