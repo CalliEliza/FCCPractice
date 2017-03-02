@@ -7,7 +7,7 @@ const operations = document.querySelectorAll('[data-op]');
 const screen = document.querySelector('#value');
 const clearAll = document.querySelector('#clearAll');
 const backspace = document.querySelector('#backspace');
-let currentNumber;
+let currentNumber = 0;
 
 
 function performOperation(e) {
@@ -18,7 +18,9 @@ function performOperation(e) {
 numbers.forEach(number => number.addEventListener('click', () => {
     //console.log(number.dataset.num);
     screen.textContent += number.dataset.num; // adds to textContent
-    currentNumber = number.dataset.num; //set this to current number
+    currentNumber += number.dataset.num; //set this to current number
+    currentNumber.slice(1);
+    console.log(currentNumber);
 }));
 
 // listens for clicks on backspace button
