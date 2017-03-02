@@ -8,6 +8,7 @@ const screen = document.querySelector('#value');
 const clearAll = document.querySelector('#clearAll');
 const backspace = document.querySelector('#backspace');
 let currentNumber = 0;
+let currentOperator = '';
 
 
 function performOperation(e) {
@@ -33,5 +34,8 @@ clearAll.addEventListener('click', () => {
     screen.textContent = " ";
 });
 
-operations.forEach(operation => operation.addEventListener('click', performOperation));
+// gets operator clicked on, and sets to current operator
+operations.forEach(operation => operation.addEventListener('click', () => {
+
+}));
 
