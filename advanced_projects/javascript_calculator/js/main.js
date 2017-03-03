@@ -7,6 +7,7 @@ const operations = document.querySelectorAll('[data-op]');
 const screen = document.querySelector('#value');
 const clearAll = document.querySelector('#clearAll');
 const backspace = document.querySelector('#backspace');
+const equalSign = document.querySelector("#equals");
 
 let currentNumber = 0;
 let currentOperator = '';
@@ -15,6 +16,7 @@ let nextNumber = 0;
 let runningInput;
 //stores current inputs
 let inputs =[""];
+let total = 0;
 
 //array used to validate input
 const op1 = ['+','-','x','/','='];
@@ -35,8 +37,11 @@ function update() {
 
 function getTotal() {
     runningInput = inputs.join();
-    let test = eval(runningInput);
-    screen.textContent = test;
+    const regex = new RegExp(',', 'g');
+    runningInput = runningInput.replace(regex,'');
+    total = eval(runningInput);
+    console.log(total);
+    screen.textContent = total;
 }
 
 //listens and gets the clicked on number
@@ -52,22 +57,28 @@ numbers.forEach(number => number.addEventListener('click', () => {
 // listens for clicks on backspace button
 backspace.addEventListener('click', () => {
     screen.textContent = screen.textContent.substr(0,screen.textContent.length-1);
-    currentNumber = screen.textContent;
+    inputs.pop();
+    update();
 });
 
 //listens for click on clearAll button
 clearAll.addEventListener('click', () => {
+    //currentNumber = 0;
+    inputs = [""];
+    update();
     screen.textContent = 0;
-    currentNumber = 0;
 });
 
 // gets operator clicked on, and sets to current operator
 operations.forEach(operation => operation.addEventListener('click', () => {
-    currentOperator = operation.dataset.op;
+    inputs.push(operation.dataset.op);
+    update();
+    //currentOperator = operation.dataset.op;
    // screen.textContent = getOPSymbol(currentOperator);
-    console.log(currentOperator);
+    //console.log(currentOperator);
 }));
 
-
+//gets total when equal sign is clicked on
+equalSign.addEventListener('click', getTotal);
 
 
