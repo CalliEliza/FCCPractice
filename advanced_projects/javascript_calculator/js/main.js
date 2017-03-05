@@ -38,8 +38,8 @@ function update() {
 function getTotal() {
     runningInput = inputs.join();
     const regex = new RegExp(',', 'g');
-    runningInput = runningInput.replace(regex,'');
-    total = eval(runningInput);
+    runningInput = runningInput.replace(regex, '');
+    total = eval("(" + runningInput + ")");
     console.log(total);
     screen.textContent = total;
 }
