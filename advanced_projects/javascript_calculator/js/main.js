@@ -28,10 +28,11 @@ function getVal(input) {
 }
 
 function update() {
+    console.log("1 "+runningInput);
     runningInput =  inputs.join();
     const regex = new RegExp(',', 'g');
     runningInput = runningInput.replace(regex,'');
-    console.log(runningInput);
+    console.log("2 "+runningInput);
     screen.textContent = runningInput;
 }
 
@@ -56,10 +57,11 @@ numbers.forEach(number => number.addEventListener('click', () => {
 
 // listens for clicks on backspace button
 backspace.addEventListener('click', () => {
-    //screen.textContent = screen.textContent.substr(0,screen.textContent.length-1);
-    inputs.pop();
-    update();
     screen.textContent = screen.textContent.substr(0,screen.textContent.length-1);
+    //console.log("I'm a backspace");
+    inputs.pop();
+    //update();
+    //screen.textContent = screen.textContent.substr(0,screen.textContent.length-1);
 });
 
 //listens for click on clearAll button
