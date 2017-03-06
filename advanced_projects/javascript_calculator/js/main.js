@@ -9,6 +9,7 @@ const clearAll = document.querySelector('#clearAll');
 const backspace = document.querySelector('#backspace');
 const equalSign = document.querySelector("#equals");
 const percent = document.querySelector('#percent');
+const negativeSign = document.querySelector("#negativeSign");
 
 // store current runningInput
 let runningInput;
@@ -89,4 +90,14 @@ percent.addEventListener('click', () => {
     update();
 });
 
-
+negativeSign.addEventListener('click', () => {
+    if (!isNeg) {
+        inputs.splice(0,0,'-');
+        update();
+        isNeg = true;
+    } else {
+        inputs.splice(0,1);
+        update();
+        isNeg = false;
+    }
+});
