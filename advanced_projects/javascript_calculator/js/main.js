@@ -56,9 +56,10 @@ numbers.forEach(number => number.addEventListener('click', () => {
 
 // listens for clicks on backspace button
 backspace.addEventListener('click', () => {
-    screen.textContent = screen.textContent.substr(0,screen.textContent.length-1);
+    //screen.textContent = screen.textContent.substr(0,screen.textContent.length-1);
     inputs.pop();
     update();
+    screen.textContent = screen.textContent.substr(0,screen.textContent.length-1);
 });
 
 //listens for click on clearAll button
