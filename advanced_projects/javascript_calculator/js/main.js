@@ -41,8 +41,10 @@ function getTotal() {
     const regex = new RegExp(',', 'g');
     runningInput = runningInput.replace(regex, '');
     total = eval("(" + runningInput + ")");
+    inputs.splice(0,inputs.length,total);
     console.log(total);
-    screen.textContent = total;
+    update();
+    //screen.textContent = total;
 }
 
 //listens and gets the clicked on number
