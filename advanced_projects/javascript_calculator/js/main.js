@@ -57,10 +57,10 @@ numbers.forEach(number => number.addEventListener('click', () => {
 
 // listens for clicks on backspace button
 backspace.addEventListener('click', () => {
-    screen.textContent = screen.textContent.substr(0,screen.textContent.length-1);
+    //screen.textContent = screen.textContent.substr(0,screen.textContent.length-1);
     //console.log("I'm a backspace");
     inputs.pop();
-    //update();
+    update();
     //screen.textContent = screen.textContent.substr(0,screen.textContent.length-1);
 });
 
