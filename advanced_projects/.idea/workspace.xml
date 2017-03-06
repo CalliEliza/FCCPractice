@@ -21,11 +21,11 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/javascript_calculator/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="666">
-              <caret line="37" column="56" lean-forward="false" selection-start-line="37" selection-start-column="56" selection-end-line="37" selection-end-column="56" />
+            <state relative-caret-position="450">
+              <caret line="25" column="50" lean-forward="false" selection-start-line="25" selection-start-column="50" selection-end-line="25" selection-end-column="50" />
               <folding>
-                <element signature="e#1390#1398#0" expanded="true" />
-                <element signature="e#2076#2083#0" expanded="true" />
+                <element signature="e#1391#1399#0" expanded="true" />
+                <element signature="e#2077#2084#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -34,8 +34,8 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/javascript_calculator/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="666">
-              <caret line="64" column="3" lean-forward="false" selection-start-line="64" selection-start-column="2" selection-end-line="64" selection-end-column="3" />
+            <state relative-caret-position="551">
+              <caret line="87" column="33" lean-forward="false" selection-start-line="87" selection-start-column="33" selection-end-line="87" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -58,8 +58,8 @@
       <list>
         <option value="$PROJECT_DIR$/javascript_calculator/css/style.css" />
         <option value="$PROJECT_DIR$/javascript_calculator/js/npm.js" />
-        <option value="$PROJECT_DIR$/javascript_calculator/js/main.js" />
         <option value="$PROJECT_DIR$/javascript_calculator/index.html" />
+        <option value="$PROJECT_DIR$/javascript_calculator/js/main.js" />
       </list>
     </option>
   </component>
@@ -193,12 +193,12 @@
       <workItem from="1488475312481" duration="10423000" />
       <workItem from="1488498824110" duration="3092000" />
       <workItem from="1488755515744" duration="151000" />
-      <workItem from="1488833053624" duration="2080000" />
+      <workItem from="1488833053624" duration="2589000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24965000" />
+    <option name="totallyTimeSpent" value="25474000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1602" height="875" extended-state="6" />
@@ -258,8 +258,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1390#1398#0" expanded="true" />
-            <element signature="e#2076#2083#0" expanded="true" />
+            <element signature="e#1391#1399#0" expanded="true" />
+            <element signature="e#2077#2084#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -285,8 +285,8 @@
         <state relative-caret-position="864">
           <caret line="48" column="61" lean-forward="false" selection-start-line="48" selection-start-column="61" selection-end-line="48" selection-end-column="61" />
           <folding>
-            <element signature="e#1390#1398#0" expanded="true" />
-            <element signature="e#2076#2083#0" expanded="true" />
+            <element signature="e#1391#1399#0" expanded="true" />
+            <element signature="e#2077#2084#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -312,8 +312,8 @@
         <state relative-caret-position="972">
           <caret line="54" column="36" lean-forward="true" selection-start-line="54" selection-start-column="36" selection-end-line="54" selection-end-column="36" />
           <folding>
-            <element signature="e#1390#1398#0" expanded="true" />
-            <element signature="e#2076#2083#0" expanded="true" />
+            <element signature="e#1391#1399#0" expanded="true" />
+            <element signature="e#2077#2084#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -339,8 +339,8 @@
         <state relative-caret-position="342">
           <caret line="19" column="61" lean-forward="false" selection-start-line="19" selection-start-column="61" selection-end-line="19" selection-end-column="61" />
           <folding>
-            <element signature="e#1390#1398#0" expanded="true" />
-            <element signature="e#2076#2083#0" expanded="true" />
+            <element signature="e#1391#1399#0" expanded="true" />
+            <element signature="e#2077#2084#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -378,19 +378,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/javascript_calculator/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="37" column="56" lean-forward="false" selection-start-line="37" selection-start-column="56" selection-end-line="37" selection-end-column="56" />
+        <state relative-caret-position="450">
+          <caret line="25" column="50" lean-forward="false" selection-start-line="25" selection-start-column="50" selection-end-line="25" selection-end-column="50" />
           <folding>
-            <element signature="e#1390#1398#0" expanded="true" />
-            <element signature="e#2076#2083#0" expanded="true" />
+            <element signature="e#1391#1399#0" expanded="true" />
+            <element signature="e#2077#2084#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/javascript_calculator/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="64" column="3" lean-forward="false" selection-start-line="64" selection-start-column="2" selection-end-line="64" selection-end-column="3" />
+        <state relative-caret-position="551">
+          <caret line="87" column="33" lean-forward="false" selection-start-line="87" selection-start-column="33" selection-end-line="87" selection-end-column="33" />
           <folding />
         </state>
       </provider>

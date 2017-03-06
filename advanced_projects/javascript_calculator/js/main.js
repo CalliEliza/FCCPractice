@@ -8,15 +8,14 @@ const screen = document.querySelector('#value');
 const clearAll = document.querySelector('#clearAll');
 const backspace = document.querySelector('#backspace');
 const equalSign = document.querySelector("#equals");
+const percent = document.querySelector('#percent');
 
-let currentNumber = 0;
-let currentOperator = '';
-let nextNumber = 0;
 // store current runningInput
 let runningInput;
 //stores current inputs
 let inputs =[""];
 let total = 0;
+let isNeg = false;
 
 //array used to validate input
 const op1 = ['+','-','x','/','='];
@@ -28,11 +27,11 @@ function getVal(input) {
 }
 
 function update() {
-    console.log("1 "+runningInput);
+   // console.log("1 "+runningInput);
     runningInput =  inputs.join();
     const regex = new RegExp(',', 'g');
     runningInput = runningInput.replace(regex,'');
-    console.log("2 "+runningInput);
+    //console.log("2 "+runningInput);
     screen.textContent = runningInput;
 }
 
@@ -83,5 +82,11 @@ operations.forEach(operation => operation.addEventListener('click', () => {
 
 //gets total when equal sign is clicked on
 equalSign.addEventListener('click', getTotal);
+
+// listens for click on % button and changes number to a %
+percent.addEventListener('click', () => {
+    inputs.splice(inputs.length-2,0,'.');
+    update();
+});
 
 
