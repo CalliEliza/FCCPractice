@@ -8,11 +8,10 @@ let Person = ( function(firstAndLast) {
     let splitName = firstAndLast.split(" ");
     let firstName = splitName[0];
     let lastName = splitName[1];
-    let fullName = firstName+" "+lastName;
     //getter methods
     this.getFullName = () => {
-        console.log(fullName);
-        return fullName;
+        console.log(firstName+" "+lastName);
+        return firstName+" "+lastName;
     },
     this.getFirstName = () => {
         console.log(firstName);
@@ -37,9 +36,8 @@ let Person = ( function(firstAndLast) {
         let temp = full.split(" ");
         firstName = temp[0];
         lastName = temp[1];
-        let fName = firstName+" "+lastName;
-        console.log(fName);
-        return fName;
+        console.log(firstName+" "+lastName);
+        return firstName+" "+lastName;
     }
 });
 
@@ -48,3 +46,9 @@ let bob = new Person('Bob Ross');
 bob.setFirstName('Haskell');
 bob.getFullName();
 console.log(Object.keys(bob).length);
+bob.setLastName("Curry");
+bob.getFullName();
+bob.setFullName("Haskell Curry");
+bob.getFullName();
+bob.getFirstName();
+bob.getLastName();
