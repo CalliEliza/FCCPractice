@@ -41,7 +41,8 @@ function getTotal() {
     const regex = new RegExp(',', 'g');
     runningInput = runningInput.replace(regex, '');
     total = eval("(" + runningInput + ")");
-    inputs.splice(0,inputs.length,total);
+    let t = total.toString();
+    inputs.splice(0,inputs.length,t);
     console.log(total);
     update();
     //screen.textContent = total;
