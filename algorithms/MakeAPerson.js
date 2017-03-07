@@ -47,3 +47,4 @@ let bob = new Person('Bob Ross');
 
 bob.setFirstName('Haskell');
 bob.getFullName();
+console.log(Object.keys(bob).length);
