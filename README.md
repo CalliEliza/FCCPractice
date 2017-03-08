@@ -1,3 +1,3 @@
 # FCCPractice
 
-Here are the algorithms that I had to write for Free Code Camp.
+This are the algorithms that I wrote for FreeCodeCamp, and the advanced projects.  You can view the code here and see the projects in action at https://codepen.io/flyingspag42/
