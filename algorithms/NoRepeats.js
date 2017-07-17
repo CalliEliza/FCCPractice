@@ -44,7 +44,7 @@ function permAlone(str) {
     }
 
     getPerms(ary.length);
-<<<<<<< HEAD
+
 
     //check array of permutations
     var filtered = perm.filter(function(string) {
@@ -52,14 +52,10 @@ function permAlone(str) {
     });
 
     // return the ones with no repititions
-    return filtered.lenth;
+    return filtered.length;
+
 
 }
 
 console.log(permAlone('aab'));
-=======
 
-}
-
-permAlone('aab');
->>>>>>> 024498e8e9fa98df8d57cb3724aa3edc514698a8
