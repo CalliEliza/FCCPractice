@@ -13,6 +13,9 @@
 
 function orbitalPeriod(arr) {
 
+    console.log(arr.forEach(function(item) {
+        console.log(item.keys());
+    }));
     const GM = 398600.4418;
     const earthRadius = 6367.4447;
     const twoXpie = 2*Math.PI;
@@ -36,16 +39,13 @@ function orbitalPeriod(arr) {
         let raisedThird = Math.pow(earthRAvgA, 3);
         let divideByGM = raisedThird / GM;
         let squareRoot = Math.sqrt(divideByGM);
-        return Math.round(twoXpie * squareRoot);
+        let ans = Math.round(twoXpie * squareRoot);
+        // add orbital period to obj, remove avgAlt
+        arr[1].avgAlt = ans;
+        return ans;
     }
     //runs fxn to get orbital period
     console.log(orbitalPeriod());
-
-    // add orbital period to obj, remove avgAlt
-
-    
-
-
 
 }
 
