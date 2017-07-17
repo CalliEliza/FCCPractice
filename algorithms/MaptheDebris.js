@@ -12,8 +12,9 @@
 
 
 function orbitalPeriod(arr) {
-    var GM = 398600.4418;
-    var earthRadius = 6367.4447;
+    const GM = 398600.4418;
+    const earthRadius = 6367.4447;
+    const twoXpie = 6.283185307;
     return arr;
 }
 
