@@ -16,38 +16,32 @@ function orbitalPeriod(arr) {
     const GM = 398600.4418;
     const earthRadius = 6367.4447;
     const twoXpie = 2*Math.PI;
+    let newArray = [];
 
     let avgAltitude = 0;
 
-    //sets value for avgAltitude
-    arr.forEach(function(item) {
-        if (isNaN(item.avgAlt) === false) {
-            avgAltitude = item.avgAlt;
-        }
-    });
 
-    //check array for number
-    //isNaN returns false if value is a number
-   /* valueList.forEach(function(value) {
-        if (isNaN(value) == false) {
-            avgAltitude = value;  //gets the avgAlt out of object
-        }
-    });*/
-
-    //get orbital period
-    function orbitalPeriod() {
-        let earthRAvgA = earthRadius + avgAltitude;
+    //get orbital period, sets it in obj
+    let getOrbitalPer = function (obj) {
+        let earthRAvgA = earthRadius + obj.avgAlt;
         let raisedThird = Math.pow(earthRAvgA, 3);
         let divideByGM = raisedThird / GM;
         let squareRoot = Math.sqrt(divideByGM);
         let ans = Math.round(twoXpie * squareRoot);
-        // add orbital period to obj, remove avgAlt
-       // arr[1].avgAlt = ans;
-        return ans;
+        delete obj.avgAlt;
+        obj.orbitalPeriod = ans;
+        return obj;
+    };
+
+    //creates new array with new values
+    for (let e in arr) {
+        newArray.push(getOrbitalPer(arr[e]));
+        console.log(arr[e]);
     }
-    //runs fxn to get orbital period
-    console.log(orbitalPeriod());
+    console.log(newArray);
+    return newArray;
 
 }
 
-orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]);
+//orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]);
+orbitalPeriod([{name: "iss", avgAlt: 413.6}, {name: "hubble", avgAlt: 556.7}, {name: "moon", avgAlt: 378632.553}]);
