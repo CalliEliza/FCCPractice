@@ -14,7 +14,7 @@
 function orbitalPeriod(arr) {
 
     console.log(arr.forEach(function(item) {
-        console.log(item.keys());
+        console.log(item.name);
     }));
     const GM = 398600.4418;
     const earthRadius = 6367.4447;
@@ -22,16 +22,20 @@ function orbitalPeriod(arr) {
 
     let avgAltitude = 0;
 
-    //get array of object values
-    let valueList = arr.values();
+    //sets value for avgAltitude
+    arr.forEach(function(item) {
+        if (isNaN(item.avgAlt) === false) {
+            avgAltitude = avgAlt;
+        }
+    });
 
     //check array for number
     //isNaN returns false if value is a number
-    valueList.forEach(function(value) {
+   /* valueList.forEach(function(value) {
         if (isNaN(value) == false) {
             avgAltitude = value;  //gets the avgAlt out of object
         }
-    })
+    });*/
 
     //get orbital period
     function orbitalPeriod() {
