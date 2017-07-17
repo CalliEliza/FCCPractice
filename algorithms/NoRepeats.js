@@ -45,6 +45,14 @@ function permAlone(str) {
 
     getPerms(ary.length);
 
+    //check array of permutations
+    var filtered = perm.filter(function(string) {
+        return !string.match(rx);
+    });
+
+    // return the ones with no repititions
+    return filtered.lenth;
+
 }
 
-permAlone('aab');
+console.log(permAlone('aab'));
