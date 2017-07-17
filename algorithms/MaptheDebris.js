@@ -12,10 +12,41 @@
 
 
 function orbitalPeriod(arr) {
+
     const GM = 398600.4418;
     const earthRadius = 6367.4447;
-    const twoXpie = 6.283185307;
-    return arr;
+    const twoXpie = 2*Math.PI;
+
+    let avgAltitude = 0;
+
+    //get array of object values
+    let valueList = arr.values();
+
+    //check array for number
+    //isNaN returns false if value is a number
+    valueList.forEach(function(value) {
+        if (isNaN(value) == false) {
+            avgAltitude = value;  //gets the avgAlt out of object
+        }
+    })
+
+    //get orbital period
+    function orbitalPeriod() {
+        let earthRAvgA = earthRadius + avgAltitude;
+        let raisedThird = Math.pow(earthRAvgA, 3);
+        let divideByGM = raisedThird / GM;
+        let squareRoot = Math.sqrt(divideByGM);
+        return Math.round(twoXpie * squareRoot);
+    }
+    //runs fxn to get orbital period
+    console.log(orbitalPeriod());
+
+    // add orbital period to obj, remove avgAlt
+
+    
+
+
+
 }
 
 orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]);
