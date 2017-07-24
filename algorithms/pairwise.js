@@ -13,32 +13,20 @@
 
 
 function pairwise(arr, arg) {
+    // total for indx
     let total =0;
-    let trackIndx = [];
-    let currentIdx = 0;
-    let temp = arr[currentIdx];
-    let count = 0;
-    const length = arr.length;
-    function mainFxn()  {
-        arr.forEach(function(x) {
-            let sum = temp + x;
-            if (sum === arg) {
-                trackIndx.push(arr.indexOf(temp));
-                trackIndx.push(arr.indexOf(x));
-                total+= sum;
+    // copy of array
+    let copyArr = arr.splice();
+    let arrlen = copyArr.length;
+    for (let i = 0; i<arrlen;++i) {
+        for (let j = i+1;j<arrlen;++j) {
+            if (copyArr[i] + copyArr[j] === arg) {
+                total += i + j;
+                copyArr[i] = copyArr[j] = NaN;
             }
-            ++count;
-            if (count === length) {
-                temp = arr[currentIdx+1];
-                //mainFxn();
-                count = 0;
-            } 
+        }
+    }
 
-        });
-    }
-    if (total === 0) {
-        mainFxn();
-    }
     console.log(total);
     return total;
 }
