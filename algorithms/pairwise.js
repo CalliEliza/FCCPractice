@@ -16,7 +16,7 @@ function pairwise(arr, arg) {
     // total for indx
     let total =0;
     // copy of array
-    let copyArr = arr.splice();
+    let copyArr = arr.slice();
     let arrlen = copyArr.length;
     for (let i = 0; i<arrlen;++i) {
         for (let j = i+1;j<arrlen;++j) {
